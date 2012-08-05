@@ -1,2 +1,1 @@
-Blog_Site
-=========
+Blog_site demo using django
