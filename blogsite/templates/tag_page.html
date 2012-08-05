@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} welcome {% endblock %}
+
+{% block head %}My Site Blog{% endblock %}
+
+{%  block content %}
+
+	<h2>posts tagged by: {{tag}} </h2>
+	
+	{% for post in posts %}
+	
+		<p> {{post.creared|date:"Y-m-d"}} <a href="/blog/{{post.id}}"> {{post.title}} </a> </p>
+	
+	{% endfor %}
+
+{% endblock %}
