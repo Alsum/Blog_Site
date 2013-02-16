@@ -3,6 +3,7 @@ from django.views.generic import ListView,DetailView
 from blog.models import Post
 from blog.views import tag_page
 from django.views.generic.simple import direct_to_template
+from blog.myfeeds import BlogFeed
 
 urlpatterns = patterns('',
 
@@ -19,5 +20,7 @@ urlpatterns = patterns('',
      
      url(r'^about/$',direct_to_template,{'template':'about.html'}), 
        
-     url(r'^comments/', include('django.contrib.comments.urls')),                        
+     url(r'^comments/$', include('django.contrib.comments.urls')),      
+     
+     url(r'^feed/$',BlogFeed()),                  
 )
